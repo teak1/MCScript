@@ -1,0 +1,28 @@
+@@trig_math
+function main(){
+	/scoreboard players add R vars 5
+	/scoreboard players add HR vars 21
+	/scoreboard players set X vars 0
+	/scoreboard players set Y vars 40000
+	/scoreboard players set Z vars 0
+	trig_math:sin(R vars)
+	/scoreboard players operation X vars = RETURN vars
+	trig_math:cos(R vars)
+	/scoreboard players operation Z vars = RETURN vars
+	trig_math:cos(HR vars)
+	/scoreboard players operation Y vars += RETURN vars
+	/scoreboard players operation X vars *= 10
+	/scoreboard players operation Z vars *= 10
+	/execute as @e[tag=SPOT] store result entity @e[tag=SPOT,limit=1] Pos[0] double 0.0001 run scoreboard players get X vars
+	/execute as @e[tag=SPOT] store result entity @e[tag=SPOT,limit=1] Pos[1] double 0.0001 run scoreboard players get Y vars
+	/execute as @e[tag=SPOT] store result entity @e[tag=SPOT,limit=1] Pos[2] double 0.0001 run scoreboard players get Z vars
+	/execute as @e[tag=SPOT] at @s run particle minecraft:squid_ink ~ ~ ~ 0 0 0 0 1
+}
+
+
+/scoreboard players set HR vars 0
+/scoreboard players set R vars 0
+/kill @e[tag=SPOT]
+/summon armor_stand 0 0 0 {Tags:[SPOT],NoGravity:1b}
+
+

@@ -1,0 +1,16 @@
+#@lib
+#including the line #@lib tells the parser to parse this file but keep function names as writen in file
+function test(){
+	/say i am called from test!
+	for(1,5){
+		/say i am called from a for loop in test!
+	}
+	/say i am called after a for loop in test
+}
+
+#defining this will NOT interfere with any other library that is of a different name is this will be referenced as build:example_lib/tan
+function tan(){
+	/tellraw @a ["",{"score":{"player":"arg0","objective":"args"}}]
+}
+#calling example_lib:tan(1)
+#will set args0 to 1

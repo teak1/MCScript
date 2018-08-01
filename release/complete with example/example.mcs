@@ -1,0 +1,10 @@
+#@lib
+#for project hiarchy i suggest using a archatecure like this
+#any of the functions here can be renamed to whatever you want, there are no reserved names.
+function init(){
+	/scoreboard objectives add hi dummy
+}
+
+function main(){
+	
+}
